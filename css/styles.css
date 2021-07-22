@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 46px;
+    z-index: 1;
+    border-radius: 30px;
+    border: 2px solid white;
+    cursor: pointer;
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,124,0,1) 100%);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: rgb(241, 241, 241);
+}
+
+.users{
+    padding: 100px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: repeat(auto-fit, 200px);
+    gap: 10px;
+    justify-content: center;
+}
+
+.users img{
+    position: relative;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 0;
+}
+
+/* .users img::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,124,0,1);
+    z-index: 2;
+} */
+
+.clicked-img{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%) scale(0);
+    min-width: 200px;
+    max-width: 80vw;
+    min-height: 200px;
+    max-height: 80vh;
+    transition: 0.3s ease;
+}
+
+.clicked-img-active{
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.3s ease;
+    /* position: relative; */
+}
+
+.clicked-img-active::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: red;
+}
+
+.layout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.0);
+    pointer-events: none;
+    touch-action: none;
+    transition: 0.3s ease;
+}
+
+.layout-active{
+    background: rgba(0, 0, 0, 0.75);
+    pointer-events: all;
+    touch-action: all;
+    transition: 0.3s ease;
+}
+
+.description{
+    display: none;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    width: 80vw;
+    transform: translateX(-50%);
+    color: #fff;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.counter{
+
+}
