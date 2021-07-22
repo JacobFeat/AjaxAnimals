@@ -56,6 +56,13 @@ body{
     object-fit: cover;
     cursor: pointer;
     /* z-index: 0; */
+    transition: 0.3s ease;
+
+}
+
+.users .img-wrapper:hover img{
+    transition: 0.3s ease;
+    opacity: 0.2;
 }
 
 
