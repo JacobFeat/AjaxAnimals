@@ -22,7 +22,7 @@ function turnOnData() {
     let enjoyText = document.createElement('h2');
     enjoyText.innerHTML = "ENJOY!";
     article.insertBefore(enjoyText, article.firstChild);
-    loadData();
+    loadData(true);
     setTimeout(() => {
         enjoyText.classList.add('fade-in-active');
         users.classList.add('fade-in-active');
@@ -36,9 +36,8 @@ function showLoadMoreBtn() {
         btn.style.display = "block";
 }
 
-let amountOfImages = 4;
-
-function loadData() {
+function loadData(isGetStarted = false) {
+    let amountOfImages = 4;
     if (window.innerWidth < 600)
         amountOfImages = 1;
 
@@ -78,13 +77,16 @@ function loadData() {
         });
         xhr.send();
     }
-    setTimeout(() => {
-        window.scrollTo({
-            top: document.body.offsetHeight,
-            left: 0,
-            behavior: 'smooth',
-        });
-    }, 300);
+    if (isGetStarted !== true){
+        setTimeout(() => {
+            window.scrollTo({
+                top: document.body.offsetHeight,
+                left: 0,
+                behavior: 'smooth',
+            });
+        }, 300);
+    }
+
 }
 
 const clickedWrapper = document.querySelector('.clicked-wrapper');
