@@ -118,16 +118,23 @@ nav{
 
 .dog-icon{
     position: absolute;
+    width: 60px;
+    height: 60px;
 }
 
 .bulldog-icon{
     bottom: -16px;
-    right: 80px;
+    right: 100px;
 }
 
 .shiba-icon{
-    bottom: 90px;
-    right: 100px;
+    bottom: 110px;
+    right: 130px;
+}
+
+.lessi-icon{
+    bottom: 220px;
+    right: 20px;
 }
 
 article{
@@ -153,12 +160,11 @@ article h2{
     /* opacity: 0; */
     width: 170px;
     height: 46px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: none;
     border: 2px solid white;
     cursor: pointer;
     background: var(--dark-blue-color);
-    /* background: linear-gradient(90deg, var(--light-yellow-color) 0%, var(--dark-yellow-color) 100%); */
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;

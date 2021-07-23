@@ -101,18 +101,17 @@ function showImg(img) {
 
 function showName(img, htmlString) {
     let cutBegLink = 'breeds/';
-    let cutEndLink = '';
     let beginningLink = img.src.indexOf(cutBegLink) + cutBegLink.length;
     let leftLink = img.src.slice(beginningLink);
     let dog = leftLink.slice(0, leftLink.indexOf('/'));
     if (dog.includes('-')) {
         let line = dog.indexOf('-');
         let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1, line) + ' ' + dog.charAt(line + 1).toUpperCase() + dog.slice(line + 2, dog.length);
-        dogName.innerHTML = dogStrain;
+        htmlString.innerHTML = dogStrain;
     }
     else {
         let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1).toLowerCase();
-        dogName.innerHTML = dogStrain;
+        htmlString.innerHTML = dogStrain;
     }
 }
 
