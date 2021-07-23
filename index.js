@@ -16,12 +16,12 @@ let imgCurrentSpan = document.querySelector('.current-img');
 
 const article = document.querySelector('article');
 
-function turnOnData(){
+function turnOnData() {
     let enjoyText = document.createElement('h2');
     enjoyText.innerHTML = "ENJOY!";
     article.insertBefore(enjoyText, article.firstChild);
     loadData();
-    setTimeout(()=>{
+    setTimeout(() => {
         enjoyText.classList.add('fade-in-active');
         users.classList.add('fade-in-active');
         getStartedBtn.removeEventListener('click', turnOnData);
@@ -29,12 +29,17 @@ function turnOnData(){
 
 }
 
-function showLoadMoreBtn(){
+function showLoadMoreBtn() {
     btn.style.display = "block";
 }
 
+let amountOfImages = 4;
+
 function loadData() {
-    for (let i = 0; i < 4; i++) {
+    if (window.innerWidth < 600)
+        amountOfImages = 1;
+        
+    for (let i = 0; i < amountOfImages; i++) {
         const xhr = new XMLHttpRequest();
 
         xhr.open("GET", "https://dog.ceo/api/breeds/image/random", true);
@@ -85,10 +90,10 @@ function showImg(img) {
     clickedWrapper.classList.add('clicked-img-active');
     layout.classList.add('layout-active');
     description.style.display = "flex";
-    
+
 }
 
-function showName(img, htmlString){
+function showName(img, htmlString) {
     let cutBegLink = 'breeds/';
     let cutEndLink = '';
     let beginningLink = img.src.indexOf(cutBegLink) + cutBegLink.length;
@@ -96,7 +101,7 @@ function showName(img, htmlString){
     let dog = leftLink.slice(0, leftLink.indexOf('/'));
     if (dog.includes('-')) {
         let line = dog.indexOf('-');
-        let dogStrain = dog.charAt(0).toUpperCase()+dog.slice(1, line) + ' ' + dog.charAt(line+1).toUpperCase() +  dog.slice(line+2, dog.length);
+        let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1, line) + ' ' + dog.charAt(line + 1).toUpperCase() + dog.slice(line + 2, dog.length);
         dogName.innerHTML = dogStrain;
     }
     else {
