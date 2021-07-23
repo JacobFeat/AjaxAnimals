@@ -1,3 +1,12 @@
+:root{
+    --dark-blue-color: #134C5F;
+    --light-green-color: #C8E7E1;
+    --dark-green-color: #386A60;
+    --light-yellow-color: #FEE46D;
+    --dark-yellow-color: #FDD532;
+
+}
+
 @media screen and (min-width: 550px) {
 
     .hero-content{
@@ -9,6 +18,93 @@
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 750px) {
     
+    header{
+        background-image: url(../images/background/bgDesktop1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+    }
+
+
+    .logo{
+        margin: 0 50px;
+    }
+
+    .animal-switch-btn{
+        display: block;
+        background: var(--dark-blue-color);
+        color: #fff;
+        margin: 0 50px;
+    }
+
+    .hero-content{
+        background-image: none;
+        padding-bottom: 6rem;
+    }
+
+    .hero-content h1{
+        
+    }
+
+    
+    .dog-icon{
+        width: 70px;
+        height: 70px;
+    }
+
+    .bulldog-icon{
+        right: 470px;
+    }
+
+    .shiba-icon{
+
+    }
+
+    .lessi-icon{
+
+    }
+
+    .hotdog-icon{
+        display: block;
+        bottom: 300px;
+        right: 200px;
+    }    
+    
+    .french-icon{
+        display: block;
+        bottom: 360px;
+        right: 60px;
+    }
+    
+
 }
+
+
+
+    /* .dog-icon{
+        width: 90px;
+        height: 90px;
+    }
+
+    .bulldog-icon{
+        right: 550px;
+        bottom: 0;
+    }
+
+    .shiba-icon{
+        right: 520px;
+        bottom: 270px;
+    }
+
+    .lessi-icon{
+        right: 100px;
+        bottom: 320px;
+    } */

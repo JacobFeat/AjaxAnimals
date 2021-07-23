@@ -41,6 +41,10 @@ nav{
     font-weight: 700;
 }
 
+.animal-switch-btn{
+    display: none;
+}
+
 .hero-content{
     padding: 6rem 5vw 0rem;
     background-image: url(../images/background/bg.png);
@@ -135,6 +139,14 @@ nav{
 .lessi-icon{
     bottom: 220px;
     right: 20px;
+}
+
+.hotdog-icon{
+    display: none;
+}
+
+.french-icon{
+    display: none;
 }
 
 article{
