@@ -93,7 +93,7 @@ const clickedWrapper = document.querySelector('.clicked-wrapper');
 const clickedImg = document.querySelector('.clicked-img');
 const clickedActive = document.querySelector('.clicked-img-active');
 const layout = document.querySelector('.layout');
-const layoutChildren = document.querySelectorAll('.layout *');
+const layoutChildren = document.querySelectorAll('.layout > *');
 
 function showImg(img) {
     clickedImg.src = img.src;

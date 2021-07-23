@@ -274,9 +274,9 @@ article h2{
     transition: 0.3s ease;
 }
 
-.layout *{
+.layout > *{
     display: none;
-    padding: 5vh 0;
+    padding: 10vh 0;
     color: #fff;
     z-index: 2;
     font-weight: 700;
