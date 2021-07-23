@@ -1,6 +1,9 @@
 const users = document.querySelector('.users');
 // XHR
 const btn = document.querySelector('.btn');
+const getStartedBtn = document.querySelector('.get-started-btn');
+
+
 
 let imgs = document.querySelectorAll('.users img');
 let dogName = document.querySelector('.dog-name');
@@ -10,6 +13,14 @@ let output = '';
 let dogs = [];
 let imgLengthSpan = document.querySelector('.length-img');
 let imgCurrentSpan = document.querySelector('.current-img');
+
+getStartedBtn.addEventListener('click', turnOnData);
+
+function turnOnData(){
+    loadData();
+    getStartedBtn.removeEventListener('click', turnOnData);
+}
+
 
 function loadData() {
     for (let i = 0; i < 4; i++) {
@@ -105,6 +116,6 @@ function slideImg(e) {
     }
 }
 
-btn.addEventListener('click', loadData);
+// btn.addEventListener('click', loadData);
 document.addEventListener('keydown', slideImg);
 layout.addEventListener('click', turnOffGallery);

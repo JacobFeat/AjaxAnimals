@@ -130,17 +130,6 @@ nav{
     right: 100px;
 }
 
-/* .hero-background{
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 204px;
-    height: 442px;
-    background-image: url(../images/background/bg.png);
-    background-size: cover;
-    z-index: -2;
-} */
-
 article{
     width: 100%;
     background: white;
@@ -168,11 +157,9 @@ article{
 
 .container{
     display: flex;
-    display: none;
+    /* display: none; */
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
-    background: rgb(241, 241, 241);
 }
 
 .users{
@@ -228,7 +215,7 @@ article{
 
 .clicked-img{
     min-width: 200px;
-    max-width: 80vw;
+    max-width: 70vw;
     min-height: 200px;
     max-height: 80vh;
 }
@@ -271,4 +258,9 @@ article{
     z-index: 2;
     font-weight: 700;
     font-size: 2rem;
+}
+
+.description .dog-name{
+    text-align: right;
+
 }
