@@ -135,13 +135,22 @@ article{
     background: white;
 }
 
+article h2{
+    padding: 4rem 0;
+    text-align: center;
+    color: var(--dark-blue-color);
+    opacity: 0;
+    transform: translateY(50%);
+}
+
 /*  */
 .btn {
     display: none;
     position: fixed;
-    bottom: 50px;
+    bottom: -50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%);
+    /* opacity: 0; */
     width: 170px;
     height: 46px;
     border-radius: 30px;
@@ -154,6 +163,18 @@ article{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
+    animation: fadeInBtn 0.5s ease forwards 0.3s;
+}
+
+@keyframes fadeInBtn {
+    0%{
+        bottom: -50px;
+        /* opacity: 0; */
+    }
+    100%{
+        bottom: 50px;
+        opacity: 1;
+    }
 }
 
 .container{
@@ -164,13 +185,15 @@ article{
 }
 
 .users{
-    padding: 100px 0;
+    padding: 0px 0 100px;
     width: 100%;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, 200px);
     grid-template-rows: repeat(auto-fit, 200px);
     gap: 10px;
-    justify-content: center;
+    opacity: 0;
+    transform: translateY(20%);
 }
 
 .users .img-wrapper{
@@ -241,7 +264,7 @@ article{
 }
 
 .layout-active{
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     pointer-events: all;
     touch-action: all;
     transition: 0.3s ease;
@@ -264,4 +287,11 @@ article{
 .description .dog-name{
     text-align: right;
 
+}
+
+
+.fade-in-active{
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: 0.3s ease;
 }

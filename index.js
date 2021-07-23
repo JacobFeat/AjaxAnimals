@@ -14,13 +14,24 @@ let dogs = [];
 let imgLengthSpan = document.querySelector('.length-img');
 let imgCurrentSpan = document.querySelector('.current-img');
 
+const article = document.querySelector('article');
 
 function turnOnData(){
+    let enjoyText = document.createElement('h2');
+    enjoyText.innerHTML = "ENJOY!";
+    article.insertBefore(enjoyText, article.firstChild);
     loadData();
-    getStartedBtn.removeEventListener('click', turnOnData);
-    btn.style.display = "block";
+    setTimeout(()=>{
+        enjoyText.classList.add('fade-in-active');
+        users.classList.add('fade-in-active');
+        getStartedBtn.removeEventListener('click', turnOnData);
+    }, 300);
+
 }
 
+function showLoadMoreBtn(){
+    btn.style.display = "block";
+}
 
 function loadData() {
     for (let i = 0; i < 4; i++) {
@@ -116,6 +127,7 @@ function slideImg(e) {
     }
 }
 
+window.addEventListener('scroll', showLoadMoreBtn);
 getStartedBtn.addEventListener('click', turnOnData);
 btn.addEventListener('click', loadData);
 document.addEventListener('keydown', slideImg);
