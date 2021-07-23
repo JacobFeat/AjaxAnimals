@@ -19,6 +19,10 @@ body{
 
 header{
     position: relative;
+        background-image: url(../images/background/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 nav{
@@ -43,10 +47,7 @@ nav{
 
 .hero-content{
     padding: 6rem 5vw 0rem;
-    background-image: url(../images/background/bg.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
+
 }
 
 .hero-content h1{
