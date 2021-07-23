@@ -19,10 +19,6 @@ body{
 
 header{
     position: relative;
-        background-image: url(../images/background/bg.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
 }
 
 nav{
@@ -47,7 +43,10 @@ nav{
 
 .hero-content{
     padding: 6rem 5vw 0rem;
-
+    background-image: url(../images/background/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 .hero-content h1{
@@ -109,8 +108,12 @@ nav{
 
 .about-me-btn{
     background: var(--light-green-color);
-    color: var(--dark-green-color);
     margin-bottom: 0;
+}
+
+.about-me-btn a{
+    text-decoration: none;
+    color: var(--dark-green-color);
 }
 
 .dog-icon{
@@ -140,7 +143,6 @@ nav{
 
 article{
     width: 100%;
-    height: 400px;
     background: white;
 }
 
@@ -166,6 +168,7 @@ article{
 
 .container{
     display: flex;
+    display: none;
     justify-content: center;
     width: 100%;
     min-height: 100vh;
