@@ -93,14 +93,13 @@ const clickedWrapper = document.querySelector('.clicked-wrapper');
 const clickedImg = document.querySelector('.clicked-img');
 const clickedActive = document.querySelector('.clicked-img-active');
 const layout = document.querySelector('.layout');
-const description = document.querySelector('.description');
-
+const layoutChildren = document.querySelectorAll('.layout *');
 
 function showImg(img) {
     clickedImg.src = img.src;
     clickedWrapper.classList.add('clicked-img-active');
     layout.classList.add('layout-active');
-    description.style.display = "flex";
+    layoutChildren.forEach(child => child.style.display = "inline-block");
 
 }
 
@@ -123,7 +122,7 @@ function showName(img, eleToChange) {
 function turnOffGallery() {
     clickedWrapper.classList.remove('clicked-img-active');
     layout.classList.remove('layout-active');
-    description.style.display = "none";
+    layoutChildren.forEach(child => child.style.display = "none");
 }
 
 function slideImg(e) {
@@ -131,15 +130,21 @@ function slideImg(e) {
         clickedImg.src = imgs[currentIndex - 1].src;
         currentIndex--;
         imgCurrentSpan.innerHTML = currentIndex + 1;
+        showName(imgs[currentIndex], dogName);
     }
     if (e.key === "ArrowRight" && currentIndex < imgs.length - 1) {
         clickedImg.src = imgs[currentIndex + 1].src;
         currentIndex++;
         imgCurrentSpan.innerHTML = currentIndex + 1;
+        showName(imgs[currentIndex], dogName);
     }
     if (e.key === "Escape") {
         turnOffGallery();
     }
+}
+
+function testIMGS(){
+
 }
 
 window.addEventListener('scroll', showLoadMoreBtn);
