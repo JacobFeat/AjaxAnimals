@@ -54,13 +54,27 @@ function loadData(isGetStarted = false) {
                 output += `
                 <div class="img-wrapper">
                     <img src='${dog.message}' width="200" height="200">
-                    <span class="overlay-img"></span>
+                    <span class="overlay-img">
+                        <p class="overlay-text"> </p>
+                    </span>
                 </div>
                 `;
                 users.innerHTML = output;
                 imgs = document.querySelectorAll('.users img');
 
                 imgs.forEach((img, index) => {
+                    img.addEventListener('mouseenter', ()=>{
+                        let overlayTexts = document.querySelectorAll('.overlay-text');
+                        overlayTexts.forEach(text => {
+                                showName(img, text);
+                        })
+                    });
+                    img.addEventListener('mouseout', () => {
+                        let overlayTexts = document.querySelectorAll('.overlay-text');
+                        overlayTexts.forEach(text => {
+                            text.innerHTML = "";
+                        })
+                    })
                     img.addEventListener('click', () => {
                         showImg(img);
                         showName(img, dogName);
@@ -87,6 +101,23 @@ function loadData(isGetStarted = false) {
         }, 300);
     }
 
+}
+
+
+function hoverName(img, eleToChange){
+    let cutBegLink = 'breeds/';
+    let beginningLink = img.src.indexOf(cutBegLink) + cutBegLink.length;
+    let leftLink = img.src.slice(beginningLink);
+    let dog = leftLink.slice(0, leftLink.indexOf('/'));
+    if (dog.includes('-')) {
+        let line = dog.indexOf('-');
+        let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1, line) + ' ' + dog.charAt(line + 1).toUpperCase() + dog.slice(line + 2, dog.length);
+        console.log(dogStrain);
+    }
+    else {
+        let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1).toLowerCase();
+        console.log(dogStrain);
+    }
 }
 
 const clickedWrapper = document.querySelector('.clicked-wrapper');
@@ -118,6 +149,8 @@ function showName(img, eleToChange) {
         eleToChange.innerHTML = dogStrain;
     }
 }
+
+
 
 function turnOffGallery() {
     clickedWrapper.classList.remove('clicked-img-active');
