@@ -198,7 +198,7 @@ article h2{
     grid-template-columns: repeat(auto-fit, 200px);
     grid-template-rows: repeat(auto-fit, 200px);
     gap: 10px;
-    background-image: url(/images/background/mobile-user-bg-opacity0.3.png);
+    background-image: url(../images/background/mobile-user-bg-opacity0.3.png);
     opacity: 0;
     transform: translateY(20%);
 }
