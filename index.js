@@ -38,7 +38,7 @@ let amountOfImages = 4;
 function loadData() {
     if (window.innerWidth < 600)
         amountOfImages = 1;
-        
+
     for (let i = 0; i < amountOfImages; i++) {
         const xhr = new XMLHttpRequest();
 
@@ -75,7 +75,13 @@ function loadData() {
         });
         xhr.send();
     }
-
+    setTimeout(()=>{
+        window.scrollTo({
+            top: document.body.offsetHeight,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }, 300);
 }
 
 const clickedWrapper = document.querySelector('.clicked-wrapper');
