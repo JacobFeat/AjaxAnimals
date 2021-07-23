@@ -53,6 +53,7 @@ nav{
     position: relative;
     max-width: 200px;
     font-size: 1.8rem;
+    font-weight: 700;
     color: var(--dark-blue-color);
 }
 
@@ -109,6 +110,20 @@ nav{
     background: var(--light-green-color);
     color: var(--dark-green-color);
     margin-bottom: 0;
+}
+
+.dog-icon{
+    position: absolute;
+}
+
+.bulldog-icon{
+    bottom: -16px;
+    right: 80px;
+}
+
+.shiba-icon{
+    bottom: 90px;
+    right: 100px;
 }
 
 /* .hero-background{
