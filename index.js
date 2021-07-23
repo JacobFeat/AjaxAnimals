@@ -14,11 +14,11 @@ let dogs = [];
 let imgLengthSpan = document.querySelector('.length-img');
 let imgCurrentSpan = document.querySelector('.current-img');
 
-getStartedBtn.addEventListener('click', turnOnData);
 
 function turnOnData(){
     loadData();
     getStartedBtn.removeEventListener('click', turnOnData);
+    btn.style.display = "block";
 }
 
 
@@ -116,6 +116,7 @@ function slideImg(e) {
     }
 }
 
-// btn.addEventListener('click', loadData);
+getStartedBtn.addEventListener('click', turnOnData);
+btn.addEventListener('click', loadData);
 document.addEventListener('keydown', slideImg);
 layout.addEventListener('click', turnOffGallery);
