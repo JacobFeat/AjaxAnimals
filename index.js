@@ -16,6 +16,8 @@ let imgCurrentSpan = document.querySelector('.current-img');
 
 const article = document.querySelector('article');
 
+let isClicked = false;
+
 function turnOnData() {
     let enjoyText = document.createElement('h2');
     enjoyText.innerHTML = "ENJOY!";
@@ -26,11 +28,12 @@ function turnOnData() {
         users.classList.add('fade-in-active');
         getStartedBtn.removeEventListener('click', turnOnData);
     }, 300);
-
+    isClicked = true;
 }
 
 function showLoadMoreBtn() {
-    btn.style.display = "block";
+    if (isClicked)
+        btn.style.display = "block";
 }
 
 let amountOfImages = 4;
@@ -75,7 +78,7 @@ function loadData() {
         });
         xhr.send();
     }
-    setTimeout(()=>{
+    setTimeout(() => {
         window.scrollTo({
             top: document.body.offsetHeight,
             left: 0,
@@ -99,7 +102,7 @@ function showImg(img) {
 
 }
 
-function showName(img, htmlString) {
+function showName(img, eleToChange) {
     let cutBegLink = 'breeds/';
     let beginningLink = img.src.indexOf(cutBegLink) + cutBegLink.length;
     let leftLink = img.src.slice(beginningLink);
@@ -107,11 +110,11 @@ function showName(img, htmlString) {
     if (dog.includes('-')) {
         let line = dog.indexOf('-');
         let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1, line) + ' ' + dog.charAt(line + 1).toUpperCase() + dog.slice(line + 2, dog.length);
-        htmlString.innerHTML = dogStrain;
+        eleToChange.innerHTML = dogStrain;
     }
     else {
         let dogStrain = dog.charAt(0).toUpperCase() + dog.slice(1).toLowerCase();
-        htmlString.innerHTML = dogStrain;
+        eleToChange.innerHTML = dogStrain;
     }
 }
 
