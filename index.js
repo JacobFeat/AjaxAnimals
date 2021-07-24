@@ -21,7 +21,7 @@ let isClicked = false;
 function turnOnData() {
     let enjoyText = document.createElement('h2');
     enjoyText.innerHTML = "ENJOY!";
-    article.insertBefore(enjoyText, article.firstChild);
+    article.insertBefore(enjoyText, article.querySelector('.container'));
     loadData(true);
     setTimeout(() => {
         enjoyText.classList.add('fade-in-active');
