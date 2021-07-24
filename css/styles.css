@@ -51,6 +51,7 @@ nav{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
+    color: var(--dark-blue-color);
 }
 
 .hero-content h1{
@@ -58,7 +59,7 @@ nav{
     max-width: 200px;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-blue-color);
+    z-index: 1;
 }
 
 .hero-content h1::before{
@@ -87,6 +88,11 @@ nav{
     z-index: -1;
 }
 
+.hero-description{
+    display: none;
+    max-width: 330px;
+    padding: 1.5rem 0 0;
+}
 
 .hero-btns-wrapper{
     display: flex;
@@ -103,6 +109,7 @@ nav{
     font-weight: 600;
     font-size: 0.75rem;
     cursor: pointer;
+    z-index: 1;
 }
 
 .get-started-btn{

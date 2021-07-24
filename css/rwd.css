@@ -7,6 +7,21 @@
 
 }
 
+@media screen and (min-width: 450px) {
+    .hero-content{
+        background-image:  url(../images/background/bg_tablet.png);
+    }
+
+    .bulldog-icon{
+        right: 150px;
+    }
+
+    .shiba-icon{
+        right: 200px;
+    }
+    
+}
+
 @media screen and (min-width: 550px) {
 
     .hero-content{
@@ -18,7 +33,7 @@
     }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 600px) {
     
     header{
         background-image: url(../images/background/bgDesktop1.png);
@@ -26,6 +41,23 @@
         background-repeat: no-repeat;
         background-position: right;
     }
+
+    .hero-content{
+        background-image: none;
+    }
+    
+    .shiba-icon{
+        right: 100px;
+    }
+
+    .bulldog-icon{
+        right: 350px;
+    }
+
+
+}
+
+@media screen and (min-width: 750px) {
 
     nav{
         display: flex;
@@ -48,10 +80,6 @@
     .hero-content{
         background-image: none;
         padding-bottom: 6rem;
-    }
-
-    .hero-content h1{
-        
     }
 
     
@@ -84,27 +112,88 @@
         right: 60px;
     }
     
-
 }
 
+@media screen and (min-width:950px) {
 
+    .hero-content{
+        /* padding: 5rem 10vw 0; */
+    }
+    
+    .hero-content h1{
+        font-size: 2.1rem;
+    }
 
-    /* .dog-icon{
-        width: 90px;
-        height: 90px;
+    .hero-description{
+        display: block;
+    }
+
+    .hero-btns-wrapper{
+        flex-direction: row;
+    }
+
+    .hero-btn{
+        height: 44px;
+    }
+
+    .get-started-btn{
+        margin-right: 0.8rem;
     }
 
     .bulldog-icon{
-        right: 550px;
-        bottom: 0;
+        right: 500px;
     }
 
     .shiba-icon{
-        right: 520px;
         bottom: 270px;
+        right: 480px;
     }
 
     .lessi-icon{
+        right: 50px;
+        bottom: 300px;
+    }
+
+    .hotdog-icon{
         right: 100px;
-        bottom: 320px;
-    } */
+        bottom: 160px;
+    }
+
+    .french-icon{
+        right: 260px;
+    }
+
+}
+
+@media screen and (min-width: 1150px){
+
+    .hero-content h1{
+        font-size: 2.4rem;
+        max-width: 340px;
+    }
+
+    .bulldog-icon{
+        right: 600px;
+    }
+
+    .shiba-icon{
+        right: 630px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    .hero-content{
+        padding-left: 12vw;
+    }
+    
+}
+
+@media screen and (min-width: 1650px) {
+    
+    .hero-content h1{
+        font-size: 2.7rem;
+        max-width: 510px;
+    }
+    
+}
