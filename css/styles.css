@@ -181,6 +181,11 @@ article{
     padding: 2rem 0;
 }
 
+.advantages-list li p{
+    padding-top: 1rem;
+    font-weight: 600;
+}
+
 article h2{
     padding: 4rem 0;
     text-align: center;

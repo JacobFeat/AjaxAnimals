@@ -82,6 +82,20 @@
         padding-bottom: 6rem;
     }
 
+    .advantages-container{
+        padding-top: 8rem;
+    }
+
+    .advantages-list{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 2rem 0;
+    }
+
+    .advantages-list li{
+        /* padding: 2rem 3rem; */
+    }
+
     
     .dog-icon{
         width: 70px;
