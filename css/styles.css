@@ -97,6 +97,8 @@ nav{
 .hero-btns-wrapper{
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 140px;
     padding: 2rem 0 0;
 }
 
@@ -110,12 +112,19 @@ nav{
     font-size: 0.75rem;
     cursor: pointer;
     z-index: 1;
+    transition: 0.3s;
 }
 
 .get-started-btn{
     background: var(--dark-blue-color);
     color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
+.get-started-btn-fold{
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+}
+
 
 .about-me-btn{
     background: var(--light-green-color);
@@ -125,6 +134,45 @@ nav{
 .about-me-btn a{
     text-decoration: none;
     color: var(--dark-green-color);
+}
+
+.arrows-wrapper{
+    display: flex;
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-20px) scaleX(0);
+    transition: 0.3s;
+}
+
+.arrows-wrapper-expand{
+    transform: translateY(20px) scaleX(1);
+    transition: 0.3s;
+}
+
+.arrows-svg{
+    width: 24px;
+    animation: bump 1.8s ease infinite;
+    /* order: 1; */
+
+}
+
+@keyframes bump {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.arrows-text{
+    padding: 0.5rem;
+    font-weight: 600;
 }
 
 .dog-icon{

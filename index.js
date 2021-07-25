@@ -2,7 +2,9 @@ const users = document.querySelector('.users');
 // XHR
 const btn = document.querySelector('.btn');
 const getStartedBtn = document.querySelector('.get-started-btn');
-
+const aboutMeBtn = document.querySelector('.about-me-btn');
+const heroBtns = document.querySelector('.hero-btns-wrapper');
+const arrowsWrapper = document.querySelector('.arrows-wrapper');
 
 
 let imgs = document.querySelectorAll('.users img');
@@ -29,6 +31,23 @@ function turnOnData() {
         getStartedBtn.removeEventListener('click', turnOnData);
     }, 300);
     isClicked = true;
+
+    buttonsAnimation();
+}
+
+function buttonsAnimation(){
+    if(getComputedStyle(heroBtns).flexDirection === "column"){
+        let positionBtnDiffX = getStartedBtn.getBoundingClientRect().x-aboutMeBtn.getBoundingClientRect().x;
+        let positionBtnDiffY = getStartedBtn.getBoundingClientRect().y-aboutMeBtn.getBoundingClientRect().y;
+        aboutMeBtn.style.transform = `translate(${positionBtnDiffX}px, ${positionBtnDiffY}px)`;
+        getStartedBtn.style.transform = `translate(${-positionBtnDiffX}px, ${-positionBtnDiffY}px)`;
+    }
+        setTimeout(()=> {
+            getStartedBtn.classList.add('get-started-btn-fold');
+            setTimeout(()=>{
+                arrowsWrapper.classList.add('arrows-wrapper-expand');
+            }, 300)
+        }, 350);
 }
 
 function showLoadMoreBtn() {

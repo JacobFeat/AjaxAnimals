@@ -144,6 +144,7 @@
 
     .hero-btns-wrapper{
         flex-direction: row;
+        width: auto;
     }
 
     .hero-btn{
@@ -152,6 +153,18 @@
 
     .get-started-btn{
         margin-right: 0.8rem;
+    }
+
+    .arrows-wrapper{
+        position: absolute;
+        left: 20px;
+        transform: scaleX(0);
+
+    }
+
+    .arrows-wrapper-expand{
+        transform: scaleX(1);
+        
     }
 
     .bulldog-icon{
