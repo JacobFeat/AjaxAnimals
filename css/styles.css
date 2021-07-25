@@ -119,6 +119,19 @@ nav{
     background: var(--dark-blue-color);
     color: white;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    animation: pulse 1.5s ease infinite 4s;
+}
+
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+    }    
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .get-started-btn-fold{
@@ -286,6 +299,7 @@ article h2{
     padding: 0px 60px 100px;
     width: 100%;
     display: grid;
+    display: none;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 200px);
     grid-template-rows: repeat(auto-fit, 200px);
@@ -358,11 +372,24 @@ article h2{
     transition: 0.3s ease;
 }
 
+.close-img{
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    color: #fff;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+    transform: translateX(-50%);
+}
+
 .clicked-img{
     min-width: 200px;
     max-width: 70vw;
     min-height: 200px;
-    max-height: 80vh;
+    max-height: 60vh;
 }
 
 .clicked-img-active{

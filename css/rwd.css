@@ -54,6 +54,9 @@
         right: 350px;
     }
 
+    .layout > *{
+        padding: 5vh 0;
+    }
 
 }
 
@@ -157,13 +160,13 @@
 
     .arrows-wrapper{
         position: absolute;
-        left: 20px;
-        transform: scaleX(0);
+        left: 14px;
+        transform: translateY(5px) scaleX(0);
 
     }
 
     .arrows-wrapper-expand{
-        transform: scaleX(1);
+        transform: translateY(5px) scaleX(1);
         
     }
 

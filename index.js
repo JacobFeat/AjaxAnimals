@@ -25,6 +25,7 @@ function turnOnData() {
     enjoyText.innerHTML = "ENJOY!";
     article.insertBefore(enjoyText, article.querySelector('.container'));
     loadData(true);
+    users.style.display = "grid";
     setTimeout(() => {
         enjoyText.classList.add('fade-in-active');
         users.classList.add('fade-in-active');
@@ -202,11 +203,10 @@ function slideImg(e) {
     }
 }
 
-function testIMGS(){
+let closeImg = clickedWrapper.querySelector('.close-img');
 
-}
-
-window.addEventListener('resize', getGridData)
+closeImg.addEventListener('click', turnOffGallery);
+window.addEventListener('resize', getGridData);
 window.addEventListener('scroll', showLoadMoreBtn);
 getStartedBtn.addEventListener('click', turnOnData);
 btn.addEventListener('click', loadData);
