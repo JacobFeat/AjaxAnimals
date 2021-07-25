@@ -55,10 +55,17 @@ function showLoadMoreBtn() {
         btn.style.display = "block";
 }
 
+function getGridData(){
+    const gridComputedStyle = window.getComputedStyle(users);
+
+    let numberOfColumns = gridComputedStyle.getPropertyValue('grid-template-columns').split(" ").length;
+
+    return numberOfColumns;
+}
+
+
 function loadData(isGetStarted = false) {
-    let amountOfImages = 4;
-    if (window.innerWidth < 600)
-        amountOfImages = 1;
+    let amountOfImages = getGridData();
 
     for (let i = 0; i < amountOfImages; i++) {
         const xhr = new XMLHttpRequest();
@@ -199,6 +206,7 @@ function testIMGS(){
 
 }
 
+window.addEventListener('resize', getGridData)
 window.addEventListener('scroll', showLoadMoreBtn);
 getStartedBtn.addEventListener('click', turnOnData);
 btn.addEventListener('click', loadData);
