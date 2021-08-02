@@ -71,7 +71,18 @@ function loadData(isGetStarted = false) {
     fetch("https://dog.ceo/api/breeds/image/random")
     .then(res => res.json())
     .then(data => {
-        console.log(data.message);
+        const dog = data;
+        dogs.push(dog);
+        output += `
+        <div class="img-wrapper">
+            <img src="${dog.message}" width="200" height="200">
+            <span class="overlay-img">
+                <p class="overlay-text"> </p>
+            </span>
+        </div>
+        `;
+        users.innerHTML = output;
+        console.log(dog);
     })
 
 }
