@@ -82,6 +82,8 @@ function loadData(isGetStarted = false) {
         </div>
         `;
         users.innerHTML = output;
+        imgs = document.querySelectorAll('.users img');
+
         console.log(dog);
     })
 
