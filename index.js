@@ -68,65 +68,7 @@ function getGridData(){
 function loadData(isGetStarted = false) {
     let amountOfImages = getGridData();
 
-    for (let i = 0; i < amountOfImages; i++) {
-        const xhr = new XMLHttpRequest();
-
-        xhr.open("GET", "https://dog.ceo/api/breeds/image/random", true);
-
-        xhr.responseType = 'json';
-        xhr.addEventListener('load', e => {
-            if (xhr.status === 200) {
-                const dog = xhr.response;
-                dogs.push(dog);
-                output += `
-                <div class="img-wrapper">
-                    <img src='${dog.message}' width="200" height="200">
-                    <span class="overlay-img">
-                        <p class="overlay-text"> </p>
-                    </span>
-                </div>
-                `;
-                users.innerHTML = output;
-                imgs = document.querySelectorAll('.users img');
-
-                imgs.forEach((img, index) => {
-                    img.addEventListener('mouseenter', ()=>{
-                        let overlayTexts = document.querySelectorAll('.overlay-text');
-                        overlayTexts.forEach(text => {
-                                showName(img, text);
-                        })
-                    });
-                    img.addEventListener('mouseout', () => {
-                        let overlayTexts = document.querySelectorAll('.overlay-text');
-                        overlayTexts.forEach(text => {
-                            text.innerHTML = "";
-                        })
-                    })
-                    img.addEventListener('click', () => {
-                        showImg(img);
-                        showName(img, dogName);
-                        currentIndex = index;
-                        imgLengthSpan.innerHTML = imgs.length;
-                        imgCurrentSpan.innerHTML = index + 1;
-                    });
-                });
-            }
-        });
-
-        xhr.addEventListener('error', e => {
-            alert("Nie udało się nawiązać połączenia");
-        });
-        xhr.send();
-    }
-    if (isGetStarted !== true){
-        setTimeout(() => {
-            window.scrollTo({
-                top: document.body.offsetHeight,
-                left: 0,
-                behavior: 'smooth',
-            });
-        }, 300);
-    }
+   
 
 }
 

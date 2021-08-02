@@ -332,13 +332,11 @@ article h2{
     height: 100%;
     background-color: rgba(200, 231, 225, 0);
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--dark-blue-color);
     pointer-events: none;
     opacity: 0;
     transition: 0.5s ease;
-    /* transition-duration: 2s;
-    transition-property: background-color; */
 }
 
 .overlay-img .overlay-text{
@@ -347,14 +345,6 @@ article h2{
     justify-content: center;
     height: 100%;
 }
-
-
-
-/* .users .overlay-img p{
-    height: 100%;
-    line-height: 200px;
-
-} */
 
 .users .img-wrapper:hover .overlay-img{
     opacity: 1;
