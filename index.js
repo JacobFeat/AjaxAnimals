@@ -84,6 +84,28 @@ function loadData(isGetStarted = false) {
         users.innerHTML = output;
         imgs = document.querySelectorAll('.users img');
 
+        imgs.forEach((img, index) => {
+            img.addEventListener('mouseenter', ()=>{
+                let overlayTexts = document.querySelectorAll('.overlay-text');
+                overlayTexts.forEach(text => {
+                    showName(img, text);
+                })
+            });
+            img.addEventListener('mouseout', () => {
+                let overlayTexts = document.querySelectorAll('.overlay-text');
+                overlayTexts.forEach(text => {
+                    text.innerHTML = "";
+                })
+            });
+            img.addEventListener('click', () => {
+                showImg(img);
+                showName(img, dogName);
+                currentIndex = index;
+                imgLengthSpan.innerHTML = imgs.length;
+                imgCurrentSpan.innerHTML = index + 1;
+            });
+        });
+
         console.log(dog);
     })
 
