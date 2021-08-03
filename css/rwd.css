@@ -39,7 +39,7 @@
         background-image: url(../images/background/bgDesktop1.png);
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: right;
+        background-position: top right;
     }
 
     .hero-content{
